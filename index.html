@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theater Ticket Booking</title>
+  <style>
+    body {
+      background-color: rgb(0, 213, 255);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333333;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    form {
+      background-color: #f9dede;
+      border: 1px solid #b8b3b3;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #cf2222;
+    }
+    
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Theater Ticket Booking</h1>
+    <form id="bookingForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="movie">Movie:</label>
+      <select id="movie" name="movie">
+        <option value="movie1">Leo</option>
+        <option value="movie2">Maveeran</option>
+        <option value="movie3">Jailer</option>
+      </select>
+      
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+      
+      <input type="submit" value="Book Tickets">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Retrieve form values
+      var name = document.getElementById("name").value;
+      var movie = document.getElementById("movie").value;
+      var date = document.getElementById("date").value;
+      var time = document.getElementById("time").value;
+      
+      // Display booking details
+      var bookingDetails = "Name: " + name + "\n" +
+                           "Movie: " + movie + "\n" +
+                           "Date: " + date + "\n" +
+                           "Time: " + time;
+      alert("Booking successful!\n\n" + bookingDetails);
+      
+      // Reset form
+      document.getElementById("bookingForm").reset();
+    });
+  </script>
+</body>
+</html>
